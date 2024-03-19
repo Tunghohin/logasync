@@ -6,7 +6,6 @@
 #include <vector>
 
 #include "./common.h"
-#include "./details/misc/spin_lock.h"
 #include "./sinks/sink.h"
 
 namespace sgimg {
@@ -21,26 +20,32 @@ public:
     Logger(std::string name) : name_(name) {}
     Logger(std::string name, sinks::sink_sptr sink)
         : name_(name), sinks_{sink} {}
+    virtual ~Logger() = default;
 
     auto sinks() -> std::vector<sinks::sink_sptr>&;
     auto sinks() const -> std::vector<sinks::sink_sptr> const&;
 
-    constexpr auto level() const noexcept -> sgimg::log_level_t const&;
+    constexpr auto level() const noexcept -> LevelEnum;
     constexpr auto name() const noexcept -> std::string const&;
+
+    auto set_level(LogLevel const&) -> void;
 
 private:
     std::string const name_;
-    sgimg::log_level_t const level_{sgimg::LogLevel::INFO};
+    LogLevel level_{LevelEnum::INFO};
     std::vector<sinks::sink_sptr> sinks_;
 };
 
-inline constexpr auto Logger::level() const noexcept
-    -> sgimg::log_level_t const& {
-    return this->level_;
+inline constexpr auto Logger::level() const noexcept -> LevelEnum {
+    return static_cast<LevelEnum>(level_.load(std::memory_order_relaxed));
 }
 
 inline constexpr auto Logger::name() const noexcept -> std::string const& {
     return this->name_;
+}
+
+inline auto Logger::set_level(LogLevel const& level) -> void {
+    this->level_.store(level);
 }
 
 inline auto Logger::sinks() -> std::vector<sinks::sink_sptr>& {

@@ -5,9 +5,9 @@
 
 namespace sgimg {
 
-using log_level_t = std::atomic<int>;
+using LogLevel = std::atomic<int>;
 
-enum LogLevel {
+enum LevelEnum {
     TRACE = 0,
     DEBUG = 1,
     INFO = 2,
