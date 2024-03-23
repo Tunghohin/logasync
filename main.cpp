@@ -1,7 +1,9 @@
+#include <chrono>
 #include <iostream>
 
-#include "sglogger/logger.h"
-#include "spdlog/sinks/rotating_file_sink.h"
+#include <sglogger/logger.h>
+#include <spdlog/sinks/rotating_file_sink.h>
+#include <spdlog/spdlog.h>
 
 struct walala {
     int a = 2;
@@ -15,5 +17,6 @@ auto operator<<(std::ostream& os, walala const& obj) -> std::ostream& {
 }
 
 int main() {
-    auto logger = sgimg::log::Logger<spdlog::sinks::rotating_file_sink>("MAIN");
+    auto logger = sgimg::log::LoggerImpl("mainlog");
+    logger.info("Now: {}", 233);
 }

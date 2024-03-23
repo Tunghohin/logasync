@@ -3,9 +3,9 @@
 #include <memory>
 #include <type_traits>
 
-#include "logger_base.h"
-#include "spdlog/logger.h"
-#include "spdlog/sinks/rotating_file_sink.h"
+#include <sglogger/logger_base.h>
+#include <spdlog/logger.h>
+#include <spdlog/sinks/rotating_file_sink.h>
 
 namespace sgimg::log {
 
@@ -73,7 +73,8 @@ private:
     std::shared_ptr<spdlog::logger> inner_;
 };
 
-Logger<spdlog::sinks::rotating_file_sink_mt>::Logger(std::string const& name)
+inline Logger<spdlog::sinks::rotating_file_sink_mt>::Logger(
+    std::string const& name)
     : log::LoggerBase(name),
       inner_(spdlog::rotating_logger_mt(name_, "./log/log.sglog",
                                         1024 * 1024 * 64, 0)) {

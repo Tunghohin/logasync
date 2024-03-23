@@ -1,0 +1,9 @@
+/home/notaroo/Labs/cpp/sugilog/build/CMakeFiles/main.dir
+/home/notaroo/Labs/cpp/sugilog/build/CMakeFiles/edit_cache.dir
+/home/notaroo/Labs/cpp/sugilog/build/CMakeFiles/rebuild_cache.dir
+/home/notaroo/Labs/cpp/sugilog/build/sglogger/CMakeFiles/sglogger.dir
+/home/notaroo/Labs/cpp/sugilog/build/sglogger/CMakeFiles/edit_cache.dir
+/home/notaroo/Labs/cpp/sugilog/build/sglogger/CMakeFiles/rebuild_cache.dir
+/home/notaroo/Labs/cpp/sugilog/build/spdlog/CMakeFiles/spdlog.dir
+/home/notaroo/Labs/cpp/sugilog/build/spdlog/CMakeFiles/edit_cache.dir
+/home/notaroo/Labs/cpp/sugilog/build/spdlog/CMakeFiles/rebuild_cache.dir

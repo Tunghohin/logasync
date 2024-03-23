@@ -3,8 +3,8 @@
 #include <memory>
 #include <string>
 
-#include "sglogger/common.h"
-#include "sglogger/formatter.h"
+#include <sglogger/common.h>
+#include <sglogger/formatter.h>
 
 namespace sgimg::log {
 
@@ -35,6 +35,6 @@ protected:
     log::log_level_t level_{static_cast<int>(log::LogLevel::info)};
 };
 
-LoggerBase::LoggerBase(std::string const& name) : name_(name) {}
+inline LoggerBase::LoggerBase(std::string const& name) : name_(name) {}
 
 } // namespace sgimg::log
