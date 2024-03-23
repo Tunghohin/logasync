@@ -1,1 +1,0 @@
-/usr/lib/ccache/c++ -O3 -DNDEBUG CMakeFiles/main.dir/main.cpp.o -o main  -Wl,-rpath,/home/notaroo/Labs/cpp/sugilog/build/sglogger:/home/notaroo/Labs/cpp/sugilog/build/spdlog sglogger/libsglogger.so spdlog/libspdlog.so 

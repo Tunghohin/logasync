@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/notaroo/Labs/cpp/sugilog/build",
-  "command": "/usr/lib/ccache/c++  -I/home/notaroo/Labs/cpp/sugilog/sglogger/. -I/home/notaroo/Labs/cpp/sugilog/spdlog/. -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/main.dir/main.cpp.o -c /home/notaroo/Labs/cpp/sugilog/main.cpp",
-  "file": "/home/notaroo/Labs/cpp/sugilog/main.cpp"
-}
-]
